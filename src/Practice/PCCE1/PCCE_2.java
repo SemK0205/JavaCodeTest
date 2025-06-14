@@ -1,4 +1,4 @@
-package Practice;
+package Practice.PCCE1;
 
 import java.util.Scanner;
 

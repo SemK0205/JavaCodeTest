@@ -1,4 +1,4 @@
-package Practice;
+package Practice.PCCE1;
 
 public class PCCE_1 {
 
