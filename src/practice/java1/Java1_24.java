@@ -1,6 +1,6 @@
 package practice.java1;
 
-public class Java_24 {
+public class Java1_24 {
 
     /*
     두 정수 left와 right가 매개변수로 주어집니다. left부터 right까지의 모든 수들 중에서,

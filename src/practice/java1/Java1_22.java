@@ -1,6 +1,6 @@
 package practice.java1;
 
-public class Java_22 {
+public class Java1_22 {
 
     /*
     길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다.

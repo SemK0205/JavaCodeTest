@@ -1,6 +1,6 @@
 package practice.java1;
 
-public class Java_23 {
+public class Java1_23 {
 
     /*
     길이가 n이고, "수박수박수박수...."와 같은 패턴을 유지하는 문자열을 리턴하는 함수,

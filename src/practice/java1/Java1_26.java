@@ -1,6 +1,6 @@
 package practice.java1;
 
-public class Java_26 {
+public class Java1_26 {
 
     /*
     새로 생긴 놀이기구는 인기가 매우 많아 줄이 끊이질 않습니다.
