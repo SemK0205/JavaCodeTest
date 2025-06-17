@@ -12,6 +12,20 @@ public class Java1_34 {
 
     public int solution(int n) {
         int answer = 0;
+        StringBuilder sb = new StringBuilder();
+        int copy = n;
+        int count = 0;
+        while (n > 0) {
+            sb.append(n % 3);
+            n /= 3;
+            count++;
+        }
+
+        int count1 = 0;
+        for(int i = count; i > 0; i--){
+            answer += (sb.toString().charAt(i-1)-'0') * Math.pow(3, count1);
+            count1++;
+        }
         return answer;
     }
 }
