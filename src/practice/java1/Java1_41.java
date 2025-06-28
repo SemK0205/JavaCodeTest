@@ -32,7 +32,22 @@ public class Java1_41 {
      */
 
     public String solution(int[] food) {
-        String answer = "";
-        return answer;
+        StringBuilder sb = new StringBuilder();
+        StringBuilder answer = new StringBuilder();
+        int k = 0;
+        for(int i=1;i<food.length;i++){
+            int count = 0;
+            k = food[i]/2;
+            if(k > 0){
+                while(count < k){
+                    sb.append(i);
+                    count++;
+                }
+            }
+        }
+        answer.append(sb);
+        answer.append("0");
+        answer.append(sb.reverse());
+        return answer.toString();
     }
 }
