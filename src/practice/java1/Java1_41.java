@@ -36,29 +36,22 @@ public class Java1_41 {
      */
 
     public String solution(int[] food) {
+        StringBuilder sb = new StringBuilder();
         StringBuilder answer = new StringBuilder();
-        List<Integer> list1 = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
-        int count = 0;
-        int index = 1;
-        for (int i = 0; i < food.length ; i++ ){
-            if(food[i]/ 2 > 0) {
-                while (count < food[i] / 2) {
-                    list1.add(index);
+        int k = 0;
+        for(int i=1;i<food.length;i++){
+            int count = 0;
+            k = food[i]/2;
+            if(k > 0){
+                while(count < k){
+                    sb.append(i);
                     count++;
                 }
-                index++;
             }
         }
-        list2.copyOf(list1);
-        Collections.reverse(list2);
-        for (int i = 0; i < list1.size() ; i++ ){
-            answer.append(list1.get(i));
-        }
+        answer.append(sb);
         answer.append("0");
-        for (int i = 0; i < list2.size() ; i++ ){
-            answer.append(list2.get(i));
-        }
+        answer.append(sb.reverse());
         return answer.toString();
     }
 }
