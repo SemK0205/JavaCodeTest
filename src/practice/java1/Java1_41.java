@@ -1,5 +1,9 @@
 package practice.java1;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Java1_41 {
 
     /*
@@ -32,7 +36,29 @@ public class Java1_41 {
      */
 
     public String solution(int[] food) {
-        String answer = "";
-        return answer;
+        StringBuilder answer = new StringBuilder();
+        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+        int count = 0;
+        int index = 1;
+        for (int i = 0; i < food.length ; i++ ){
+            if(food[i]/ 2 > 0) {
+                while (count < food[i] / 2) {
+                    list1.add(index);
+                    count++;
+                }
+                index++;
+            }
+        }
+        list2.copyOf(list1);
+        Collections.reverse(list2);
+        for (int i = 0; i < list1.size() ; i++ ){
+            answer.append(list1.get(i));
+        }
+        answer.append("0");
+        for (int i = 0; i < list2.size() ; i++ ){
+            answer.append(list2.get(i));
+        }
+        return answer.toString();
     }
 }
