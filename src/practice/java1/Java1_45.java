@@ -1,5 +1,10 @@
 package practice.java1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
 public class Java1_45 {
 
     /*
@@ -15,8 +20,11 @@ public class Java1_45 {
     인덱스 1의 문자가 같은 문자열이 여럿 일 경우, 사전순으로 앞선 문자열이 앞쪽에 위치합니다.
      */
 
-    public String[] solution(String[] strings, int n) {
-        String[] answer = {};
+    public List<String> solution(String[] strings, int n) {
+
+        List<String> answer = new ArrayList<>(Arrays.asList(strings));
+
+        answer.sort(Comparator.comparingInt((String str) -> str.charAt(n)).thenComparing(str -> str));
 
         return answer;
     }
