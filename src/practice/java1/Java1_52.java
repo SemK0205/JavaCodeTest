@@ -1,5 +1,8 @@
 package practice.java1;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Java1_52 {
 
     /*
@@ -14,5 +17,38 @@ public class Java1_52 {
     2016년 a월 b일은 실제로 있는 날입니다. (13월 26일이나 2월 45일같은 날짜는 주어지지 않습니다)
      */
 
+    public String solution(int a, int b) {
+        String answer = "";
+        int sum = 0;
+        Map<Integer, String> day = new HashMap<>();
+        day.put(0, "THU");
+        day.put(1, "FRI");
+        day.put(2, "SAT");
+        day.put(3, "SUN");
+        day.put(4, "MON");
+        day.put(5, "TUE");
+        day.put(6, "WED");
 
+        Map<Integer, Integer> count = new HashMap<>();
+        count.put(1,31);
+        count.put(2,29);
+        count.put(3,31);
+        count.put(4,30);
+        count.put(5,31);
+        count.put(6,30);
+        count.put(7,31);
+        count.put(8,31);
+        count.put(9,30);
+        count.put(10,31);
+        count.put(11,30);
+        count.put(12,31);
+
+        for(int i = 1; i < a; i++) {
+            sum += count.get(i);
+        }
+
+        answer = day.get((sum+b)%7);
+
+        return answer;
+    }
 }
