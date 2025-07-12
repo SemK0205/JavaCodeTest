@@ -1,5 +1,7 @@
 package practice.java1;
 
+import java.util.Arrays;
+
 public class Java1_59 {
 
     /*
@@ -31,5 +33,23 @@ public class Java1_59 {
     10 ≤ bill[0], bill[1] ≤ 2,000
      */
 
-
+    public int solution(int[] wallet, int[] bill) {
+        int answer = 0;
+        Arrays.sort(wallet);
+        while(true) {
+            Arrays.sort(bill);
+            if(wallet[1] >= bill[1]) {
+                if(wallet[0] >= bill[0]) {
+                    break;
+                } else {
+                    bill[1] /= 2;
+                    answer++;
+                }
+            } else {
+                bill[1] /= 2;
+                answer++;
+            }
+        }
+        return answer;
+    }
 }
