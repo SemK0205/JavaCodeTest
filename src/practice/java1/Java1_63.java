@@ -1,5 +1,8 @@
 package practice.java1;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Java1_63 {
 
     /*
@@ -26,5 +29,33 @@ public class Java1_63 {
     1 ≤ index ≤ 20
      */
 
+    public String solution(String s, String skip, int index) {
+        StringBuilder answer = new StringBuilder();
 
+        Set<Character> skipChars = new HashSet<>();
+        for (char c : skip.toCharArray()) {
+            skipChars.add(c);
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            char originalChar = s.charAt(i);
+            char currentChar = originalChar;
+            int actualMoveCount = 0;
+
+            while (actualMoveCount < index) {
+                currentChar++;
+
+                if (currentChar > 'z') {
+                    currentChar = 'a';
+                }
+
+                if (!skipChars.contains(currentChar)) {
+                    actualMoveCount++;
+                }
+            }
+
+            answer.append(currentChar);
+        }
+        return answer.toString();
+    }
 }
