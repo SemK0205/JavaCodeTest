@@ -20,5 +20,33 @@ public class Java1_64 {
     s는 영어 소문자로만 이루어져 있습니다.
      */
 
+    public int solution(String s) {
+        int answer = 0;
+        int index = 0;
 
+        while (index < s.length()) {
+            answer++;
+            char firstChar = s.charAt(index);
+            int firstCharCount = 0;
+            int otherCharCount = 0;
+            int i = index;
+            for (; i < s.length(); i++) {
+                if (s.charAt(i) == firstChar) {
+                    firstCharCount++;
+                } else {
+                    otherCharCount++;
+                }
+
+                if (firstCharCount == otherCharCount) {
+                    index = i + 1;
+                    break;
+                }
+            }
+            if (i == s.length() && firstCharCount != otherCharCount) {
+                index = s.length();
+            }
+        }
+
+        return answer;
+    }
 }
