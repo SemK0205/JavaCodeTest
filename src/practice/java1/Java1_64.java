@@ -42,8 +42,8 @@ public class Java1_64 {
                     break;
                 }
             }
-            if (i == s.length() && firstCharCount != otherCharCount) {
-                index = s.length();
+            if (i == s.length()) {
+                break;
             }
         }
 
