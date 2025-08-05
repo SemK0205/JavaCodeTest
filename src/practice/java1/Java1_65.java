@@ -1,5 +1,7 @@
 package practice.java1;
 
+import java.util.HashMap;
+
 public class Java1_65 {
 
     /*
@@ -38,9 +40,47 @@ public class Java1_65 {
      */
 
     public int[] solution(String[] keymap, String[] targets) {
+
         int[] answer = new int[targets.length];
 
+        HashMap<Character, Integer> minPresses = new HashMap<>();
 
+        for (String keyString : keymap) {
+            for (int i = 0; i < keyString.length(); i++) {
+                char ch = keyString.charAt(i);
+                int presses = i + 1;
+
+                if (minPresses.containsKey(ch)) {
+                    minPresses.put(ch, Math.min(minPresses.get(ch), presses));
+                }
+                else {
+                    minPresses.put(ch, presses);
+                }
+            }
+        }
+
+        for (int i = 0; i < targets.length; i++) {
+            String targetString = targets[i];
+            int totalPresses = 0;
+            boolean possible = true;
+
+            for (int j = 0; j < targetString.length(); j++) {
+                char ch = targetString.charAt(j);
+
+                if (minPresses.containsKey(ch)) {
+                    totalPresses += minPresses.get(ch);
+                } else {
+                    possible = false;
+                    break;
+                }
+            }
+
+            if (possible) {
+                answer[i] = totalPresses;
+            } else {
+                answer[i] = -1;
+            }
+        }
 
         return answer;
     }
