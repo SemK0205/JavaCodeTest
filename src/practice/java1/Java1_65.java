@@ -37,5 +37,11 @@ public class Java1_65 {
     targets의 원소는 알파벳 대문자로만 이루어져 있습니다.
      */
 
+    public int[] solution(String[] keymap, String[] targets) {
+        int[] answer = new int[targets.length];
 
+
+
+        return answer;
+    }
 }
